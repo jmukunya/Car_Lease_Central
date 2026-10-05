@@ -1,0 +1,76 @@
+# ==============================================================================
+# 📦 Dependency Directories (Node.js)
+# ==============================================================================
+node_modules/
+jspm_packages/
+web_stage/
+
+# ==============================================================================
+# 💻 Next.js (Frontend)
+# ==============================================================================
+# Build outputs, dev caches, and Turbopack artifacts
+.next/
+out/
+frontend/.next/
+frontend/out/
+
+# ==============================================================================
+# ⚙️ NestJS (Backend)
+# ==============================================================================
+# Build production output directories
+dist/
+backend/dist/
+
+# TypeScript and build compilation caches
+*.tsbuildinfo
+
+# ==============================================================================
+# 🛡️ Secrets, Credentials, & Environment Variables
+# ==============================================================================
+# Never commit real secrets to Git!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# NestJS / Next.js production/session secret files
+.pnpm-debug.log*
+yarn-error.log*
+npm-debug.log*
+
+# ==============================================================================
+# 🛠️ Testing, Coverage, & Tooling Caches
+# ==============================================================================
+# Testing frameworks (Jest, Vitest, Cypress, Playwright)
+coverage/
+.nyc_output/
+.cypress/
+.playwright/
+
+# Linter and Formatter caches (ESLint, Prettier)
+.eslintcache
+.prettiercache
+
+# ==============================================================================
+# 🖥️ System & IDE Specific Files
+# ==============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs (VS Code, WebStorm)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
