@@ -1,41 +1,48 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Register = () => {
-    const [role, setRole] = useState('');
-    const [error, setError]= useState('');
-    const [email, setEmail] = useState("");
-    const [password,setPassword]=useState('');
-    const [password2, setPassword2] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+  const [role, setRole] = useState("");
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-    const handleRegister = (e: React.SubmitEvent) => {
-      e.preventDefault();
+  const handleRegister = (formData: FormData) => {};
 
+  const handleSetEmail = (email: string) => {
+    setEmail(email);
+  };
 
+  const handleSetPassword = (password: string) => {
+    setPassword(password);
+  };
+
+  const handleSetPassword2 = (password2: string) => {
+    if (password2 !== password) {
+      setError("Password does not match");
+      setPassword2(password2);
     }
+    setError("");
+  };
 
-    const handleSetEmail = (email:string) => {
-        
-    };
+  const handleSetFirstName = (firstName: string) => {
+    setFirstName(firstName);
+  };
 
-    const handleSetPassword = (password: string) => { };
-
-    const handleSetPassword2 = (password: string) => {};
-    
-    const handleSetFirstName = (firstName: string) => { };
-    
-    const handleSetLastName = (lastName: string) => {};
-    
+  const handleSetLastName = (lastName: string) => {
+    setLastName(lastName);
+  };
 
   return (
     <div>
       <div className="flex justify-center items-center h-full">
         <form
           className="p-10 bg-white rounded-lg w-1/2 font-[arial] shadow-sm"
-          onSubmit={handleRegister}
+          action={handleRegister}
         >
           <h2 className="center mb-4 font-extrabold">Sign-Up</h2>
           {error && (
@@ -174,6 +181,6 @@ const Register = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Register
+export default Register;

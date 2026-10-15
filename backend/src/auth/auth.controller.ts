@@ -28,14 +28,15 @@ export class AuthController {
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto);
   }
-
+  
   @Public()
   @Post("login")
   login(@Body() dto: LoginDto) {
     return this.authService.login(dto);
   }
-
+  
   @Post("refresh")
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
   refresh(@Body("refreshToken") refreshToken: string) {
     return this.authService.refreshTokens(refreshToken);

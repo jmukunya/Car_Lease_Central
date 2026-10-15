@@ -13,8 +13,8 @@ export class User {
   @Column()
   password_hash: string;
 
-  @Column({ type: "enum", enum: ["ADMIN", "OWNER", "DRIVER"] })
-  role: "ADMIN" | "OWNER" | "DRIVER";
+  @Column({ type: "enum", enum: ["ADMIN", "OWNER", "DRIVER","SERVICE_PROVIDER"] })
+  role: "ADMIN" | "OWNER" | "DRIVER" | "SERVICE_PROVIDER";
 
   @Column({
     type: "enum",

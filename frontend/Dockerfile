@@ -1,14 +1,14 @@
 FROM node:26-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@12.2.0 && npm install
+RUN npm install -g npm@latest && npm install
 COPY . .
 RUN npm run build
 
 FROM node:26-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@12.2.0 && npm install --only=production
+RUN npm install -g npm@latest && npm install --omit=dev
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app ./public
 COPY --from=builder /app/package.json ./package.json
